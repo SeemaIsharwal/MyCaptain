@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main()
+{
+
+    int menu;
+
+    printf("Enter a random menu number from 1-5\n");
+
+
+scanf("%d", &menu);
+
+
+    switch(menu)
+    {
+        
+        case 1 :
+       
+        printf("Your order is:\n  Food Item: Sandwich\n Price: Rs 149");
+        break;
+
+        case 2 :
+        
+        printf("Your order is:\n  Food Item: Pasta\n Price: Rs 179\n");
+        break;
+
+        case 3 :
+        
+        printf("Your order is:\n  Food Item: Pizza\n Price: Rs 239\n");
+        break;
+
+        case 4 : 
+       
+        printf(" Your order is:\n  Food Item: Burger\n Price: Rs 129\n");
+        break;
+
+        case 5 :
+        printf("Your order is:\n  Food Item: French Fries\n Price: Rs 99");
+        break;
+     
+        default:
+        printf("Please enter a valid number");
+    }
+
+
+
+ return 0;
+}
