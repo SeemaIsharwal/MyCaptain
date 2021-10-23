@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    FILE *fp1, *fp2;
+    char ch, fname[30], newch[500], c;
+    int i=0, j, COUNT=0;
+    printf("Enter the filename with extension: ");
+    gets(fname);
+    fp1 = fopen(fname, "r");
+    if(!fp1)
+    {
+        printf("Error in opening the file...\nExiting...");
+        getch();
+        return 0;
+    }
+    printf("\nThe original content is:\n\n");
+    ch = getc(fp1);
+    while(ch != EOF)
+    {
+        COUNT++;
+        putchar(ch);
+        newch[i] = ch;
+        i++;
+        ch = getc(fp1);
+    }
+    printf("\n\n\n");
+    printf("The content in reverse order is:\n\n");
+    for(j=(COUNT-1); j>=0; j--)
+    {
+        ch = newch[j];
+        printf("%c", ch);
+    }
+    printf("\n");
+    getch();
+
+    printf("Enter the filename to open for reading \n");
+    scanf("%s", fname);
+
+    // Open one file for reading
+    fp1 = fopen(fname, "r");
+    if (fp1 == NULL)
+    {
+        printf("Cannot open file %s \n", fname);
+        exit(0);
+    }
+  
+    printf("Enter the filename to open for writing \n");
+    scanf("%s", fname);
+  
+    // Open another file for writing
+    fp2 = fopen(fname, "w");
+    if (fp2 == NULL)
+    {
+        printf("Cannot open file %s \n", fname);
+        exit(0);
+    }
+  
+    // Read contents 
+    c = fgetc(fp1);
+    while (c != EOF)
+    {
+        fputc(c, fp2);
+        c = fgetc(fp1);
+    }
+  
+    printf("\nContents copied to %s", fname);
+  
+    fclose(fp1);
+    fclose(fp2);
+    
+    return 0;
+}
