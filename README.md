@@ -1,2 +1,2 @@
 # MyCaptain
-Project for C Programming Assesment for swapping two numbers
+This is for my evaluation of c programming by mycaptian
